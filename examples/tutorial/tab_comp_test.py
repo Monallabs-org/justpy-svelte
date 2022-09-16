@@ -103,4 +103,4 @@ def tab_comp_test():
 
 from examples.basedemo import Demo
 
-Demo("tabgroup test", tab_comp_test)
+Demo(tab_comp_test)

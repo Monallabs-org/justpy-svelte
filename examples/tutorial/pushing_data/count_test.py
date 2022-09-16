@@ -32,4 +32,4 @@ def count_test(request):
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("count_test",count_test)
+Demo (count_test)

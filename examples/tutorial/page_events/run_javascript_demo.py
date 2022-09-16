@@ -47,4 +47,4 @@ def run_javascript_demo():
 
 # initialize the demo
 from examples.basedemo import Demo
-Demo("run_javascript_demo", run_javascript_demo)
+Demo(run_javascript_demo)

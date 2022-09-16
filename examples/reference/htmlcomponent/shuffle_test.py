@@ -13,4 +13,4 @@ def shuffle_test():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("shuffle_test",shuffle_test)
+Demo (shuffle_test)

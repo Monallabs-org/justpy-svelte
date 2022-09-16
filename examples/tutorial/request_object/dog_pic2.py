@@ -17,4 +17,4 @@ async def dog_pic2(request):
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("dog_pic2",dog_pic2)
+Demo (dog_pic2)

@@ -29,4 +29,4 @@ def alert_test1():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("alert_test1",alert_test1)
+Demo ("alert_test1")

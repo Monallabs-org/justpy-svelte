@@ -50,4 +50,4 @@ def calculator_test1():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("calculator_test1",calculator_test1)
+Demo (calculator_test1)

@@ -26,4 +26,4 @@ def radio_test1():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("radio_test1",radio_test1)
+Demo (radio_test1)

@@ -25,4 +25,4 @@ def session_test(request):
 
 # initialize the demo
 from examples.basedemo import Demo
-Demo("session_test", session_test)
+Demo(session_test)

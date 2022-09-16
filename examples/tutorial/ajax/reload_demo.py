@@ -4,6 +4,7 @@ import asyncio
 
 wp = jp.WebPage(delete_flag=False)
 wp.reload_interval = 2.5
+wp.use_websockets = False
 count_div = jp.Div(a=wp, classes='text-center m-4 p-4 text-white bg-blue-500', style='font-size: 200px')
 
 async def increment_counter(start):
@@ -21,4 +22,4 @@ def reload_demo():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("reload_demo",reload_demo, startup=start_counting, websockets=False)
+Demo (reload_demo, startup_func=start_counting)

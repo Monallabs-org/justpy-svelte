@@ -46,4 +46,4 @@ def after_demo():
 # initialize the demo
 from examples.basedemo import Demo
 
-Demo("after demo", after_demo)
+Demo(after_demo)

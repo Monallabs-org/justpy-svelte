@@ -10,4 +10,4 @@ def html_comps1():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("html_comps1",html_comps1)
+Demo (html_comps1)

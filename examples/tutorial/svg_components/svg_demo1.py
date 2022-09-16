@@ -13,4 +13,4 @@ def svg_demo1():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("svg_demo1",svg_demo1)
+Demo (svg_demo1)

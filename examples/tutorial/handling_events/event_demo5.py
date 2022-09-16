@@ -21,4 +21,4 @@ def event_demo5():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("event_demo5",event_demo5)
+Demo (event_demo5)

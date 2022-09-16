@@ -17,4 +17,4 @@ def link_demo2():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("link_demo2",link_demo2)
+Demo (link_demo2)

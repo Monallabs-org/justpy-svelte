@@ -48,4 +48,4 @@ def radio_test2():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("radio_test2",radio_test2)
+Demo (radio_test2)

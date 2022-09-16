@@ -8,4 +8,4 @@ def static_test():
 
 # initialize the demo
 from examples.basedemo import Demo
-Demo("static_test", static_test)
+Demo(static_test)

@@ -38,4 +38,4 @@ def focus_test_input():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("focus_test_input",focus_test_input)
+Demo (focus_test_input)

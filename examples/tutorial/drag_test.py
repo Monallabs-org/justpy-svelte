@@ -57,4 +57,4 @@ def drag_test():
 
 from examples.basedemo import Demo
 
-Demo("drag & drop test", drag_test)
+Demo(drag_test)

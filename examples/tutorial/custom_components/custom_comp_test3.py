@@ -39,4 +39,4 @@ def custom_comp_test3():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("custom_comp_test3",custom_comp_test3)
+Demo (custom_comp_test3)

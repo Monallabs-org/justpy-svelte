@@ -8,7 +8,7 @@ def event_propagates():
         jp.Div(text=f'Div {i}', a=main_div, classes='m-2 p-2 text-xl text-white bg-blue-500', click='self.text="clicked"')
     return wp
 
-@jp.SetRoute('/no_propagation')
+#@jp.SetRoute('/no_propagation')
 def event_does_not_propagate():
     wp = jp.WebPage()
     main_div = jp.Div(classes='flex flex-wrap m-2 p-2 ', a=wp, click='self.text="main div clicked"')
@@ -19,4 +19,6 @@ def event_does_not_propagate():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("event_propagates",event_propagates)
+app = Demo (event_propagates, [ ("/no_propagation",
+                                 event_does_not_propagate)]
+            )

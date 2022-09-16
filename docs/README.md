@@ -1,110 +1,161 @@
-# JustPy
+# [JustPy-Svelte](https://github.com/Monallabs-org/justpy-svelte)
 ---
 
 ## Introduction
 
-JustPy is an object-oriented, component based, high-level Python Web Framework that requires no front-end programming. With a few lines of only Python code, you can create interactive websites without any JavaScript programming. JustPy can also be used to create graphic user interfaces for Python programs.  
-
-Unlike other web frameworks, JustPy has no front-end/back-end distinction. All programming is done on the back-end allowing a simpler, more productive, and more Pythonic web development experience. JustPy removes the front-end/back-end distinction by intercepting the relevant events on the front-end and sending them to the back-end to be processed.
-
-!!! note
-    The best way to understand JustPy is to follow the [tutorial](/tutorial/getting_started) in which there are many examples.
-
-In JustPy, elements on the web page are instances of component classes. A component in JustPy is a Python class that allows you to instantiate reusable custom elements whose functionality and design is encapsulated away from the rest of your code.
-
-Custom components can be created using other components as building blocks. Out of the box, JustPy comes with support for [HTML](tutorial/html_components) and [SVG](tutorial/svg_components) components as well as more complex components such as [charts](charts_tutorial/introduction.md) and [grids](grids_tutorial/introduction.md).  It also supports most of the components and the functionality of the [Quasar](https://quasar.dev/) library of [Material Design 2.0](https://material.io/) components.
-
-JustPy encourages creating your own components and reusing them in different projects (and, if applicable, sharing these components with others).
-
-JustPy supports visualization using [matplotlib](tutorial/matplotlib) and [Highcharts](charts_tutorial/introduction.md).
-
-JustPy integrates nicely with [pandas](https://pandas.pydata.org/) and simplifies building web sites based on pandas analysis. JustPy comes with a [pandas extension](charts_tutorial/pandas?id=using-the-pandas-extension) that makes it simple to create interactive charts and grids from pandas data structures.
-
-Hopefully, JustPy will enable teaching web development in introductory Python courses by reducing the complexity of web development.
-
-## Current Version of justpy
-
-As of {{ docdate }} the current version of justpy is {{ version }}
+Justpy-svelte is a trimmed down version of [justpy](https://justpy.io/) that replaces Vue engine with 
+Svelte for the frontend. Many frontend utitiles that were build on 
+Vue engine in Justpy are not supported here. Specifically, these ones:
+- AGGRID 
+- AGGRID_ENTERPRISE 
+- BOKEH 
+- DECKGL 
+- HIGHCHARTS 
+- KATEX 
+- PLOTLY 
+- QUASAR 
+- QUASAR_VERSION 
+- VEGA 
 
 
+The surface level programming in justpy-svelte remains practically the same as Justpy. 
+So all the tutorials and demos of Justpy are applicable to Justpy-Svelte. 
+However, some of the core functionalities of Justpy currently are not available (see list
+of examples/tutorials/tests currently passing and failing with justpy-svelte). 
 
-## If you have questions, suggestions or would like to get in touch
-If you have a question about JustPy you are welcome to check
-[stackoverflow questions tagged justpy](https://stackoverflow.com/questions/tagged/justpy) and
-Especially questions which involve details of upstream frameworks such as
-[ag-grid](https://stackoverflow.com/questions/tagged/ag-grid), [highcharts](https://www.highcharts.com/), [pandas](https://pandas.pydata.org/), [plotly](https://plotly.com/python/), [quasar](https://quasar.dev/), [tailwind](https://tailwindcss.com/) and others are best ask involving the larger [stackoverflow](https://stackoverflow.com/) community and tagging your question with both "justpy" and the tag of the specific library your are asking a question for such as "ag-grid", "highcharts","quasar", "pandas"
-and others.
+Justpy-svelte is primarly designed to be driven via [ofjustpy](https://github.com/Monallabs-org/ofjustpy) - a functional programming approach to webapp development in Python. However,
+it is fully functional and usable as standalone substitute for justpy. 
 
-If you'd like to specifically address the JustPy contributors the
-[github dicussions](https://github.com/justpy-org/justpy/discussions/new) are place to ask questions,
-propose new features and generally get in touch with the contributors.
+## Why Svelte 
+Code readability, especially for non-javascript programmers, was the primary reason for porting Justpy over to Svelte. Vue on its own is powerful, has be around for longer, and has large ecosystem of libraries/tools build around it. However, I felt it was not an easy framework to pick up and comprehend, especially for non-javascript programmers. 
 
-Our github dicussions are categorized. Please use the Category "Ideas" for feature requests.
+Comparatively, programming in  Svelte is much more straightforward and easy to comprehend 
+for programmers coming from C/C++/Python/Java background. 
 
-Issues and pull requests are also welcome. Please make sure that you follow the stackoverflow style guidelines when
-posting issues. A good way to do this is to state the problem as a stackoverflow question first. This way a larger audience
-is able to discuss solutions and work arounds and find out which part of the technology stack you are using is actually involved
-in the issue you'd like to get resolved.
+Its yet to be seen if Svelte offers any other advantages over Vue. 
+There is good reason to hope for that. Svelte is a newer runtime and has 
+very different architecture and execution paradigm, which could yield some 
+advantages like being more responsive, executing faster, and better
+coordination between Python runtime backend with the Javascript/Svelte frontend. 
 
-If you followed the procedure you are welcome to [open an issue](https://github.com/justpy-org/justpy/issues/new/choose) in the [JustPy Github repository](https://github.com/justpy-org/justpy)
+## Notes
+-  static directory by default is the directory from where the webserver is invoked
 
-## Hello World! example
-This is a simple hello world example for justpy.
+
+## Usage
+The programming with justpy-svelte is same as [justpy](https://justpy.io/) with few difference
+with respect to how starlette app  is instantiated and how routing is done.
 
 ```python
-import justpy as jp
+app = jp.build_app()
+```
+The `build_app` function takes `middlewares` and `startup_func`
+as arguments using which you can pass the list of all 
+[middlewares](https://www.starlette.io/middleware/)
+for the app and the [startup function](https://www.starlette.io/applications/) 
+to be executed at the start of the app
 
-def hello_world_readme():
-    wp = jp.WebPage()
-    d = jp.Div(text='Hello world!')
-    wp.add(d)
-    return wp
-
-jp.justpy(hello_world_readme)
+In order to attach a url path to a specific endpoint, i.e., perform routing
+using 
+p
+``` python
+app.add_jproute("/user/home", wp_func)
 ```
 
-The program above activates a web server that returns a web page with 'Hello world!' for any request. Locally, you would direct your browser to http://127.0.0.1:8000 or http://localhost:8000/ to see the result.
-
-Here is a slightly modified version in which 'Hello world!' changes to 'I was clicked!' when it is clicked.
-
-### Hello world with click
-
-```python
-import justpy as jp
-
-def my_click(self, msg):
-    self.text = 'I was clicked!'
-
-def hello_world_readme2():
-    wp = jp.WebPage()
-    d = jp.Div(text='Hello world!')
-    d.on('click', my_click)
-    wp.add(d)
-    return wp
-
-jp.justpy(hello_world_readme2)
-```
+Rest of the usage remains the same -- checkout the examples
+listed below to get a concrete sense of programming 
+with justpy-svelte:
 
 
-## Under the Hood
+### List of examples/tests working:
+- [session_test.py](/examples/tutorial/sessions/session_test.py)
+- (/examples/tutorial/static/static_test.py)
+- (/examples/tutorial/page_events/run_javascript_demo.py)
+- (/examples/tutorial/page_events/loading_page_staggered_demo.py)
+- (/examples/tutorial/custom_components/hello_test1.py)
+- (/examples/tutorial/custom_components/hello_test2.py)
+- (/examples/tutorial/custom_components/hello_test3.py)
+- (/examples/tutorial/custom_components/hello_test4.py)
+- (/examples/tutorial/custom_components/calculator_test1.py)
+- (/examples/tutorial/custom_components/calculator_test2.py)
+- (/examples/tutorial/custom_components/calculator_test3.py)
+- (/examples/tutorial/custom_components/custom_comp_test1.py)
+- (/examples/tutorial/custom_components/custom_comp_test2.py)
+- (/examples/tutorial/custom_components/tab_comp_test1.py)
+- (/examples/tutorial/input/check_test.py)
+- (/examples/tutorial/input/color_demo.py)
+- (/examples/tutorial/input/check_test.py)
+- (/examples/tutorial/input/focus_test_input.py)
+- (/examples/tutorial/input/input_demo1.py)
+- (/examples/tutorial/input/radio_test1.py)
+- (/examples/tutorial/input/radio_test2.py)
+- (/examples/tutorial/working_with_html/commands_demo1.py)
+- (/examples/tutorial/working_with_html/commands_demo2.py)
+- (/examples/tutorial/working_with_html/html_demo.py)
+- (/examples/tutorial/working_with_html/parse_demo1.py)
+- (/examples/tutorial/working_with_html/parse_demo2.py)
+- (/examples/tutorial/tab_group_component.py,)
+- (/examples/tutorial/request_object/demo_function.py)
+- (/examples/tutorial/request_object/dog_pic3.py)
+- (/examples/tutorial/request_object/dog_pic2.py)
+- (/examples/tutorial/request_object/dog_pic1.py)
+- (/examples/tutorial/pushing_data/clock_test.py)
+- (/examples/tutorial/pushing_data/count_test.py)
+- (/examples/tutorial/pushing_data/message_demo.py)
+- (/examples/tutorial/html_components/html_comps1.py)
+- (/examples/tutorial/html_components/html_comps2.py)
+- (/examples/tutorial/html_components/html_comps6.py)
+- (/examples/tutorial/html_components/link_demo1.py)
+- (/examples/tutorial/html_components/list_demo.py)
+- (/examples/tutorial/handling_events/comp_test.py)
+- (/examples/tutorial/handling_events/debounce_test.py)
+- (/examples/tutorial/handling_events/event_comp_test.py)
+- (/examples/tutorial/handling_events/debounce_test.py)
+- (/examples/tutorial/handling_events/event_comp_test.py)
+- (/examples/tutorial/handling_events/event_demo2.py)
+- (/examples/tutorial/handling_events/event_demo4.py)
+- (/examples/tutorial/handling_events/event_demo5.py)
+- (/examples/tutorial/handling_events/event_demo6.py)
+- (/examples/tutorial/handling_events/event_demo7.py)
+- (/examples/tutorial/handling_events/target_test.py)
 
-JustPy's backend is built using:
+### List of test currently failing
+- (/examples/multiuploads.py)
+- (/examples/reference/htmlcomponent/animation_test.py)
+- (/examples/reference/htmlcomponent/event_propagates.py)
+- (/examples/reference/htmlcomponent/entity_test.py)
+- (/examples/reference/htmlcomponent/inner_html_test.py)
+- (/examples/tutorial/after_demo.py)
+- (/examples/tutorial/uploading_files/)
+- (/examples/tutorial/svg_components/svg_demo1.py)
+- (/examples/tutorial/sessions/login_test.py)
+- (/examples/tutorial/page_events/loading_page_staggered_demo.py)
+- (/examples/tutorial/matplotlib/plot_test1.py)
+- (/examples/tutorial/custom_components/alert_test1.py)
+- (/examples/tutorial/custom_components/alert_test2.py)
+- (/examples/tutorial/custom_components/custom_comp_test3.py)
+- (/examples/tutorial/custom_components/custom_comp_test4.py)
+- (/examples/tutorial/custom_components/custom_comp_test5.py)
+- (/examples/tutorial/custom_components/grid_test.py)
+- (/examples/tutorial/custom_components/table_test.py)
+- (/examples/tutorial/form/form_test.py)
+- (/examples/tutorial/input/input_demo2.py)
+- (/examples/tutorial/input/input_demo3.py)
+- (/examples/tutorial/input/input_demo4.py)
+- (/examples/tutorial/input/input_demo4.py)
+- (/examples/tutorial/working_with_html/inner_demo.py)
+- (/examples/tutorial/model_and_data/input_demo_model1.py)
+- (/examples/tutorial/model_and_data/input_demo_model2.py)
+- (/examples/tutorial/html_components/link_demo2.py)
+- (/examples/tutorial/html_components/show_demo.py)
+- (/examples/tutorial/handling_events/event_demo3.py)
+- (/examples/tutorial/handling_events/event_demo6.py)
+- (/examples/tutorial/handling_events/event_demo7.py)
+- (/examples/tutorial/handling_events/out_test.py)
+- (/examples/tutorial/db_test.py)
+- (/examples/tutorial/drag_test.py)
+- (/examples/tutorial/equations/eq_test.py)
+- (/examples/tutorial/ajax/reload_demo.py)
 
-* [starlette](https://www.starlette.io/) - "a lightweight [ASGI](https://asgi.readthedocs.io/en/latest/) framework/toolkit, which is ideal for building high performance asyncio services".
-* [uvicorn](https://www.uvicorn.org/) - "a lightning-fast [ASGI](https://asgi.readthedocs.io/en/latest/) server, built on [uvloop](https://github.com/MagicStack/uvloop) and [httptools](https://github.com/MagicStack/httptools)".
-
-JustPy's frontend (which is transparent to JustPy developers) is built using:
-
-* [Vue.js](https://vuejs.org/) - "The Progressive JavaScript Framework"
-
-The way JustPy removes the frontend/backend distinction is by intercepting the relevant events on the frontend and sending them to the backend to be processed.
-
-## News and Updates
-
-For news and updates please follow the [JustPy Twitter account](https://twitter.com/justpyframework)
-
-## License
-
-[Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
-
-Copyright (c) 2019-2022 Eliezer Mintz
+### EndNotes
+Developed By: webworks.monallabs.in 

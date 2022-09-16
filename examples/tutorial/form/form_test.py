@@ -33,7 +33,7 @@ def form_test():
 
     return wp
 
-@jp.SetRoute('/form_submitted')
+
 def form_submitted(request):
     wp = jp.WebPage()
     wp.display_url = '/thanks'
@@ -47,4 +47,9 @@ def form_submitted(request):
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("form_test",form_test)
+Demo (form_test,
+      [("/form_submitted",
+        form_submitted
+          )
+          ]
+      )

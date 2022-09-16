@@ -30,4 +30,4 @@ def event_demo7():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("event_demo7",event_demo7)
+Demo (event_demo7)

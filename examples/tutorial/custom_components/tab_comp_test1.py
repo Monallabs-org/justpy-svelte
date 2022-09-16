@@ -211,4 +211,4 @@ def tab_comp_test1():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("tab_comp_test1",tab_comp_test1)
+Demo (tab_comp_test1)

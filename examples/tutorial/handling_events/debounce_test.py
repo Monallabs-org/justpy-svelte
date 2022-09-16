@@ -20,4 +20,4 @@ def debounce_test():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("debounce_test",debounce_test)
+Demo (debounce_test)

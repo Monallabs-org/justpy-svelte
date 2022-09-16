@@ -18,4 +18,4 @@ async def parse_demo2(request):
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("parse_demo2",parse_demo2)
+Demo (parse_demo2)

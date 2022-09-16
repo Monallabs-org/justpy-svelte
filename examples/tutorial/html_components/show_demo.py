@@ -34,4 +34,4 @@ def show_demo():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("show_demo",show_demo)
+Demo (show_demo)

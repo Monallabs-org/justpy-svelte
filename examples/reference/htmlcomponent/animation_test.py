@@ -29,4 +29,4 @@ def animation_test():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("animation_test",animation_test)
+Demo (animation_test)

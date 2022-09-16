@@ -18,4 +18,4 @@ def input_demo3(request):
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("input_demo3",input_demo3)
+Demo (input_demo3)

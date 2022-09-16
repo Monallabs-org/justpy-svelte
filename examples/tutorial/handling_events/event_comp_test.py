@@ -16,4 +16,4 @@ def event_comp_test():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("event_comp_test",event_comp_test)
+Demo (event_comp_test)

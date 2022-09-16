@@ -5,7 +5,6 @@ async def get_image2(self, msg):
     r = await jp.get(f'https://dog.ceo/api/breed/{msg.page.breed}/images/random')
     self.src = r['message']
 
-@jp.SetRoute('/breed/{breed}')
 async def dog_pic3(request):
     wp = jp.WebPage()
     breed = request.path_params.get('breed', 'papillon')
@@ -17,4 +16,9 @@ async def dog_pic3(request):
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("dog_pic3",dog_pic3)
+Demo (dog_pic3,
+      [('/breed/{breed}',
+        dog_pic3
+        )
+          ]
+      )

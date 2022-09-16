@@ -12,4 +12,4 @@ def check_test():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("check_test",check_test)
+Demo (check_test)

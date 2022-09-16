@@ -75,4 +75,4 @@ def calculator_test3():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("calculator_test3",calculator_test3)
+Demo (calculator_test3)

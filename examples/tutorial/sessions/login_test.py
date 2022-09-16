@@ -70,7 +70,7 @@ async def login_test(request):
         return await login_page(request)  # Return different page if not logged in
     return wp
 
-@jp.SetRoute('/login_test')
+
 async def login_page(request):
     try:
         if users[request.session_id]['logged_in']:
@@ -89,6 +89,7 @@ async def login_page(request):
     sign_in_btn.alert = alert
 
     async def sign_in_click(self, msg):
+        print ("in sign_in_click = ", login_form.name_dict)
         if login_form.name_dict['password'].value == 'password':
             session_div.text = request.session_id + ' logged in successfully'
             self.alert.show = False
@@ -113,4 +114,9 @@ async def login_successful(wp, s_id):
 
 # initialize the demo
 from examples.basedemo import Demo
-Demo("login_test", login_test)
+Demo(login_test,
+     [('/login_test', login_page
+         )
+         ]
+
+     )

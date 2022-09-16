@@ -10,4 +10,4 @@ def classes_test():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("classes_test",classes_test)
+Demo (classes_test)

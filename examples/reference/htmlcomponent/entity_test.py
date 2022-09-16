@@ -20,4 +20,4 @@ def entity_test():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("entity_test",entity_test)
+Demo (entity_test)

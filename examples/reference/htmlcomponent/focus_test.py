@@ -19,4 +19,4 @@ def focus_test():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("focus_test",focus_test)
+Demo (focus_test)

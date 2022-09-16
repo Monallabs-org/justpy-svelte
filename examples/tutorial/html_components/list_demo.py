@@ -16,4 +16,4 @@ def list_demo():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("list_demo",list_demo)
+Demo (list_demo)

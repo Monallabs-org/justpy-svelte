@@ -9,4 +9,4 @@ def hello_test2():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("hello_test2",hello_test2)
+Demo (hello_test2)

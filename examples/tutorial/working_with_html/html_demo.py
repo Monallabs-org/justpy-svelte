@@ -10,4 +10,4 @@ def html_demo():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("html_demo",html_demo)
+Demo (html_demo)

@@ -48,4 +48,4 @@ def table_test():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("table_test",table_test)
+Demo (table_test)

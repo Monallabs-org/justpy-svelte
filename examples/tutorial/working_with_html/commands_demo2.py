@@ -12,4 +12,4 @@ def commands_demo2():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("commands_demo2",commands_demo2)
+Demo (commands_demo2)

@@ -14,26 +14,26 @@ class StaggerDemo:
         """
         self.div_count=div_count
         self.staggered=staggered
-        self.wp = jp.QuasarPage(tailwind=True, title="Staggered Loading demo")
+        self.wp = jp.WebPage(tailwind=True, title="Staggered Loading demo")
         self.top_div=jp.Div(a=self.wp)
         # QSlider seems to need some room above it
         self.slider_label=jp.Span(
             text="Number of divs to load:",a=self.top_div)
         self.slider_top_margin_div=jp.Div(a=self.top_div,classes="h-10")
         margins="margin-left: 10px;margin-right: 10px;"
-        jp.QSlider(a=self.top_div,  
-                   classes="w-64",
-                   style=margins,
-                   min=200,
-                   value=self.div_count,
-                   max=1000,
-                   label=True,
-                   label_always=True,
-                   markers=True,
-                   step=200,
-                   snap=True,
-                   color="blue",
-                   change=self.on_change_div_count)
+        # jp.QSlider(a=self.top_div,  
+        #            classes="w-64",
+        #            style=margins,
+        #            min=200,
+        #            value=self.div_count,
+        #            max=1000,
+        #            label=True,
+        #            label_always=True,
+        #            markers=True,
+        #            step=200,
+        #            snap=True,
+        #            color="blue",
+        #            change=self.on_change_div_count)
         self.timer_span=jp.Span(text=f'', a=self.top_div,style=margins)
         self.button=jp.Button(text="?", a=self.top_div, click=self.on_toggle_mode, classes=jp.Styles.button_simple)
         self.main_div = jp.Div(a=self.wp,classes="flex flex-wrap")
@@ -96,4 +96,4 @@ async def loading_page_staggered_demo():
 
 # initialize the demo
 from examples.basedemo import Demo
-Demo("loading_page_staggered_demo", loading_page_staggered_demo)
+Demo(loading_page_staggered_demo)

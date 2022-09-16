@@ -18,4 +18,4 @@ def comp_test():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("comp_test",comp_test)
+Demo (comp_test)

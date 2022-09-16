@@ -20,4 +20,5 @@ async def clock_test():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("clock_test",clock_test, startup=clock_init)
+
+Demo (clock_test, startup_func=clock_init)

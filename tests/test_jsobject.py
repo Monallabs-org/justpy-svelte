@@ -10,7 +10,9 @@ from timeit import timeit
 import hjson
 
 from tests.basetest import Basetest
-from addict import Dict
+from addict_tracking_changes import Dict
+
+
 
 SLOW_TESTS = bool(os.environ.get('JP_SLOW_TESTS', False))
 

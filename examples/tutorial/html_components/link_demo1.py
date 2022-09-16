@@ -8,4 +8,4 @@ def link_demo1():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("link_demo1",link_demo1)
+Demo (link_demo1)

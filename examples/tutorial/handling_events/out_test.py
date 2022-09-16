@@ -19,4 +19,4 @@ def out_test():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("out_test",out_test)
+Demo (out_test)

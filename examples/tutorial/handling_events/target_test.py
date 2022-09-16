@@ -24,4 +24,4 @@ def target_test():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("target_test",target_test)
+Demo (target_test)

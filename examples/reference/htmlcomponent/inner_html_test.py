@@ -9,4 +9,4 @@ def inner_html_test():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("inner_html_test",inner_html_test)
+Demo (inner_html_test)

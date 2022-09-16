@@ -21,7 +21,9 @@ def message_initialize():
     d.add(message_icon, time_stamp, p)
 
 async def send_message(self, msg):
+    print ("in send message")
     if self.message.value:
+        print ("we are here", self.message.value)
         d = jp.Div(classes='flex m-2 border')
         time_stamp = jp.P(text=datetime.now().strftime('%Y-%m-%d %H:%M:%S'), classes='text-xs ml-2 flex-shrink-0')
         p = jp.Pre(text=self.message.value, classes=message_classes)
@@ -35,7 +37,10 @@ def message_demo():
     outer_div = jp.Div(classes='flex flex-col h-screen', a=wp)
     outer_div.add(header)
     d = jp.Div(classes='flex', a=outer_div)
-    message = jp.Textarea(placeholder='Enter message here', a=d, classes=input_classes, debounce=500)
+    message = jp.Textarea(placeholder='Enter message here',
+                          a=d,
+                          classes=input_classes,
+                          debounce=500)
     send_button = jp.Button(a=d, click=send_message, classes=button_classes)
     send_button.add(button_icon, button_text)
     outer_div.add(shared_div)
@@ -45,4 +50,4 @@ def message_demo():
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("message_demo",message_demo, startup=message_initialize)
+Demo (message_demo, startup_func=message_initialize)

@@ -13,4 +13,4 @@ def color_change(self, msg):
 
 # initialize the demo
 from  examples.basedemo import Demo
-Demo ("color_demo",color_demo)
+Demo (color_demo)
