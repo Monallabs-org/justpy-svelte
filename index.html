@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="An object-oriented, component based, high-level Python Web Framework that requires no front-end programming" /><meta name="author" content="Eliezer Mintz, Beyza Akyüz, Wolfgang Fahl, Kabira K." />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>JustPy-Svelte</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Introduction";
+        var mkdocs_page_input_path = "README.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> JustPy-Svelte
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href=".">Introduction</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#why-svelte">Why Svelte</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notes">Notes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#list-of-examplestests-working">List of examples/tests working:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#list-of-test-currently-failing">List of test currently failing</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">JustPy-Svelte</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Introduction</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Monallabs-org/justpy-svelte/edit/master/docs/README.md">Edit on justpy-svelte</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="justpy">JustPy</h1>
+<hr />
+<h2 id="introduction">Introduction</h2>
+<p>Justpy-svelte is a trimmed down version of justpy that replaces Vue engine with 
+Svelte for the frontend. Many frontend utitiles that were build on 
+Vue engine in Justpy are not supported here. Specifically,
+- AGGRID
+- AGGRID_ENTERPRISE
+- BOKEH
+- DECKGL
+- HIGHCHARTS
+- KATEX
+- PLOTLY
+- QUASAR
+- QUASAR_VERSION
+- VEGA</p>
+<p>The surface level programming in justpy-svelte remains practically the same as Justpy. 
+So all the tutorials and demos of Justpy are applicable to Justpy-Svelte. 
+However, some of the core functionalities of Justpy currently are not available. </p>
+<p>Justpy-svelte is designed to be driven via <a href="https://github.com/Monallabs-org/ofjustpy">ofjustpy</a> - a functional programming approach to webapp development in Python. </p>
+<h2 id="why-svelte">Why Svelte</h2>
+<p>Code readability, especially for non-javascript programmers, was the primary reason for porting Justpy over to Svelte. Vue on its own is powerful, has be around for longer, and has large ecosystem of libraries/tools build around it. However, I felt it not an easy framework to pick up and comprehend, especially for non-javascript programmers. </p>
+<p>Comparatively, programming in  Svelte is much more straightforward and easy to comprehend 
+for programmers coming from C/C++/Python/Java background. </p>
+<p>Its yet to be seen if Svelte offers any other advantages over Vue. 
+There is good reason to hope for that. Svelte is a newer runtime and has 
+very different architecture and execution paradigm, which could yield some 
+advantages like being more responsive, executing faster, and better
+coordination between Python runtime backend with the Javascript/Svelte frontend. </p>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>static directory by default is the directory from where the webserver is invoked</li>
+<li>staggered loading </li>
+</ul>
+<h3 id="list-of-examplestests-working">List of examples/tests working:</h3>
+<ul>
+<li>(/examples/tutorial/sessions/session_test.py)</li>
+<li>(/examples/tutorial/static/static_test.py)</li>
+<li>(/examples/tutorial/page_events/run_javascript_demo.py)</li>
+<li>(/examples/tutorial/page_events/loading_page_staggered_demo.py)</li>
+<li>(/examples/tutorial/custom_components/hello_test1.py)</li>
+<li>(/examples/tutorial/custom_components/hello_test2.py)</li>
+<li>(/examples/tutorial/custom_components/hello_test3.py)</li>
+<li>(/examples/tutorial/custom_components/hello_test4.py)</li>
+<li>(/examples/tutorial/custom_components/calculator_test1.py)</li>
+<li>(/examples/tutorial/custom_components/calculator_test2.py)</li>
+<li>(/examples/tutorial/custom_components/calculator_test3.py)</li>
+<li>(/examples/tutorial/custom_components/custom_comp_test1.py)</li>
+<li>(/examples/tutorial/custom_components/custom_comp_test2.py)</li>
+<li>(/examples/tutorial/custom_components/tab_comp_test1.py)</li>
+<li>(/examples/tutorial/input/check_test.py)</li>
+<li>(/examples/tutorial/input/color_demo.py)</li>
+<li>(/examples/tutorial/input/check_test.py)</li>
+<li>(/examples/tutorial/input/focus_test_input.py)</li>
+<li>(/examples/tutorial/input/input_demo1.py)</li>
+<li>(/examples/tutorial/input/radio_test1.py)</li>
+<li>(/examples/tutorial/input/radio_test2.py)</li>
+<li>(/examples/tutorial/working_with_html/commands_demo1.py)</li>
+<li>(/examples/tutorial/working_with_html/commands_demo2.py)</li>
+<li>(/examples/tutorial/working_with_html/html_demo.py)</li>
+<li>(/examples/tutorial/working_with_html/parse_demo1.py)</li>
+<li>(/examples/tutorial/working_with_html/parse_demo2.py)</li>
+<li>(/examples/tutorial/tab_group_component.py,)</li>
+<li>(/examples/tutorial/request_object/demo_function.py)</li>
+<li>(/examples/tutorial/request_object/dog_pic3.py)</li>
+<li>(/examples/tutorial/request_object/dog_pic2.py)</li>
+<li>(/examples/tutorial/request_object/dog_pic1.py)</li>
+<li>(/examples/tutorial/pushing_data/clock_test.py)</li>
+<li>(/examples/tutorial/pushing_data/count_test.py)</li>
+<li>(/examples/tutorial/pushing_data/message_demo.py)</li>
+<li>(/examples/tutorial/html_components/html_comps1.py)</li>
+<li>(/examples/tutorial/html_components/html_comps2.py)</li>
+<li>(/examples/tutorial/html_components/html_comps6.py)</li>
+<li>(/examples/tutorial/html_components/link_demo1.py)</li>
+<li>(/examples/tutorial/html_components/list_demo.py)</li>
+<li>(/examples/tutorial/handling_events/comp_test.py)</li>
+<li>(/examples/tutorial/handling_events/debounce_test.py)</li>
+<li>(/examples/tutorial/handling_events/event_comp_test.py)</li>
+<li>(/examples/tutorial/handling_events/debounce_test.py)</li>
+<li>(/examples/tutorial/handling_events/event_comp_test.py)</li>
+<li>(/examples/tutorial/handling_events/event_demo2.py)</li>
+<li>(/examples/tutorial/handling_events/event_demo4.py)</li>
+<li>(/examples/tutorial/handling_events/event_demo5.py)</li>
+<li>(/examples/tutorial/handling_events/event_demo6.py)</li>
+<li>(/examples/tutorial/handling_events/event_demo7.py)</li>
+<li>(/examples/tutorial/handling_events/target_test.py)</li>
+</ul>
+<h3 id="list-of-test-currently-failing">List of test currently failing</h3>
+<ul>
+<li>(/examples/multiuploads.py)</li>
+<li>(/examples/reference/htmlcomponent/animation_test.py)</li>
+<li>(/examples/reference/htmlcomponent/event_propagates.py)</li>
+<li>(/examples/reference/htmlcomponent/entity_test.py)</li>
+<li>(/examples/reference/htmlcomponent/inner_html_test.py)</li>
+<li>(/examples/tutorial/after_demo.py)</li>
+<li>(/examples/tutorial/uploading_files/)</li>
+<li>(/examples/tutorial/svg_components/svg_demo1.py)</li>
+<li>(/examples/tutorial/sessions/login_test.py)</li>
+<li>(/examples/tutorial/page_events/loading_page_staggered_demo.py)</li>
+<li>(/examples/tutorial/matplotlib/plot_test1.py)</li>
+<li>(/examples/tutorial/custom_components/alert_test1.py)</li>
+<li>(/examples/tutorial/custom_components/alert_test2.py)</li>
+<li>(/examples/tutorial/custom_components/custom_comp_test3.py)</li>
+<li>(/examples/tutorial/custom_components/custom_comp_test4.py)</li>
+<li>(/examples/tutorial/custom_components/custom_comp_test5.py)</li>
+<li>(/examples/tutorial/custom_components/grid_test.py)</li>
+<li>(/examples/tutorial/custom_components/table_test.py)</li>
+<li>(/examples/tutorial/form/form_test.py)</li>
+<li>(/examples/tutorial/input/input_demo2.py)</li>
+<li>(/examples/tutorial/input/input_demo3.py)</li>
+<li>(/examples/tutorial/input/input_demo4.py)</li>
+<li>(/examples/tutorial/input/input_demo4.py)</li>
+<li>(/examples/tutorial/working_with_html/inner_demo.py)</li>
+<li>(/examples/tutorial/model_and_data/input_demo_model1.py)</li>
+<li>(/examples/tutorial/model_and_data/input_demo_model2.py)</li>
+<li>(/examples/tutorial/html_components/link_demo2.py)</li>
+<li>(/examples/tutorial/html_components/show_demo.py)</li>
+<li>(/examples/tutorial/handling_events/event_demo3.py)</li>
+<li>(/examples/tutorial/handling_events/event_demo6.py)</li>
+<li>(/examples/tutorial/handling_events/event_demo7.py)</li>
+<li>(/examples/tutorial/handling_events/out_test.py)</li>
+<li>(/examples/tutorial/db_test.py)</li>
+<li>(/examples/tutorial/drag_test.py)</li>
+<li>(/examples/tutorial/equations/eq_test.py)</li>
+<li>(/examples/tutorial/ajax/reload_demo.py)</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.4.2
+Build Date UTC : 2022-12-05 05:56:21.382699+00:00
+-->
