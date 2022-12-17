@@ -48,10 +48,14 @@
     <li class="toctree-l2"><a class="reference internal" href="#why-svelte">Why Svelte</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#notes">Notes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#list-of-examplestests-working">List of examples/tests working:</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#list-of-test-currently-failing">List of test currently failing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#endnotes">EndNotes</a>
     </li>
         </ul>
     </li>
@@ -82,12 +86,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="justpy">JustPy</h1>
+                <h1 id="justpy-svelte"><a href="https://github.com/Monallabs-org/justpy-svelte">JustPy-Svelte</a></h1>
 <hr />
 <h2 id="introduction">Introduction</h2>
-<p>Justpy-svelte is a trimmed down version of justpy that replaces Vue engine with 
+<p>Justpy-svelte is a trimmed down version of <a href="https://justpy.io/">justpy</a> that replaces Vue engine with 
 Svelte for the frontend. Many frontend utitiles that were build on 
-Vue engine in Justpy are not supported here. Specifically,
+Vue engine in Justpy are not supported here. Specifically, these ones:
 - AGGRID 
 - AGGRID_ENTERPRISE 
 - BOKEH 
@@ -100,10 +104,12 @@ Vue engine in Justpy are not supported here. Specifically,
 - VEGA </p>
 <p>The surface level programming in justpy-svelte remains practically the same as Justpy. 
 So all the tutorials and demos of Justpy are applicable to Justpy-Svelte. 
-However, some of the core functionalities of Justpy currently are not available. </p>
-<p>Justpy-svelte is designed to be driven via <a href="https://github.com/Monallabs-org/ofjustpy">ofjustpy</a> - a functional programming approach to webapp development in Python. </p>
+However, some of the core functionalities of Justpy currently are not available (see list
+of examples/tutorials/tests currently passing and failing with justpy-svelte). </p>
+<p>Justpy-svelte is primarly designed to be driven via <a href="https://github.com/Monallabs-org/ofjustpy">ofjustpy</a> - a functional programming approach to webapp development in Python. However,
+it is fully functional and usable as standalone substitute for justpy. </p>
 <h2 id="why-svelte">Why Svelte</h2>
-<p>Code readability, especially for non-javascript programmers, was the primary reason for porting Justpy over to Svelte. Vue on its own is powerful, has be around for longer, and has large ecosystem of libraries/tools build around it. However, I felt it not an easy framework to pick up and comprehend, especially for non-javascript programmers. </p>
+<p>Code readability, especially for non-javascript programmers, was the primary reason for porting Justpy over to Svelte. Vue on its own is powerful, has be around for longer, and has large ecosystem of libraries/tools build around it. However, I felt it was not an easy framework to pick up and comprehend, especially for non-javascript programmers. </p>
 <p>Comparatively, programming in  Svelte is much more straightforward and easy to comprehend 
 for programmers coming from C/C++/Python/Java background. </p>
 <p>Its yet to be seen if Svelte offers any other advantages over Vue. 
@@ -114,11 +120,28 @@ coordination between Python runtime backend with the Javascript/Svelte frontend.
 <h2 id="notes">Notes</h2>
 <ul>
 <li>static directory by default is the directory from where the webserver is invoked</li>
-<li>staggered loading </li>
 </ul>
+<h2 id="usage">Usage</h2>
+<p>The programming with justpy-svelte is same as <a href="https://justpy.io/">justpy</a> with few difference
+with respect to how starlette app  is instantiated and how routing is done.</p>
+<pre><code class="language-python">app = jp.build_app()
+</code></pre>
+<p>The <code>build_app</code> function takes <code>middlewares</code> and <code>startup_func</code>
+as arguments using which you can pass the list of all 
+<a href="https://www.starlette.io/middleware/">middlewares</a>
+for the app and the <a href="https://www.starlette.io/applications/">startup function</a> 
+to be executed at the start of the app</p>
+<p>In order to attach a url path to a specific endpoint, i.e., perform routing
+using 
+p</p>
+<pre><code class="language-python">app.add_jproute(&quot;/user/home&quot;, wp_func)
+</code></pre>
+<p>Rest of the usage remains the same -- checkout the examples
+listed below to get a concrete sense of programming 
+with justpy-svelte:</p>
 <h3 id="list-of-examplestests-working">List of examples/tests working:</h3>
 <ul>
-<li>(/examples/tutorial/sessions/session_test.py)</li>
+<li><a href="/examples/tutorial/sessions/session_test.py">session_test.py</a></li>
 <li>(/examples/tutorial/static/static_test.py)</li>
 <li>(/examples/tutorial/page_events/run_javascript_demo.py)</li>
 <li>(/examples/tutorial/page_events/loading_page_staggered_demo.py)</li>
@@ -208,6 +231,8 @@ coordination between Python runtime backend with the Javascript/Svelte frontend.
 <li>(/examples/tutorial/equations/eq_test.py)</li>
 <li>(/examples/tutorial/ajax/reload_demo.py)</li>
 </ul>
+<h3 id="endnotes">EndNotes</h3>
+<p>Developed By: webworks.monallabs.in </p>
               
             </div>
           </div><footer>
@@ -250,5 +275,5 @@ coordination between Python runtime backend with the Javascript/Svelte frontend.
 
 <!--
 MkDocs version : 1.4.2
-Build Date UTC : 2022-12-05 08:07:56.839893+00:00
+Build Date UTC : 2022-12-17 15:11:15.120711+00:00
 -->
